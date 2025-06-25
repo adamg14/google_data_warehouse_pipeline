@@ -1,0 +1,13 @@
+[
+    {
+        "name": "vendor_id",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "pickup_datetime",
+        "type": "TIMESTAMP",
+        "mode": "REQUIRED"
+    }
+
+]

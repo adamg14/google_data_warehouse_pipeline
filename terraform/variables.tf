@@ -9,3 +9,15 @@ variable "region" {
   type = string
   default = "us-central1"
 }
+
+variable "dataset_id" {
+    description = "BigQuery Dataset ID"
+    type = string
+    default = "nyc_yellow_taxi_data"
+}
+
+variable "table_id" {
+    description = "BigQuery Table ID"
+    type = string
+    default = "trips"
+}

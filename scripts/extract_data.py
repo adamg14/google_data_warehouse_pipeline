@@ -58,6 +58,14 @@ def gcp_load():
     bucket = storage_client.bucket(BUCKET_NAME)
     blob = bucket.blob(BLOB_NAME)
 
+    generation_match_precondition = 0
+    blob.upload_from_filename(
+        source_file_name,
+        if_generation_match=generation_match_precondition
+    )
+
+    print(f"Extracted and processed data uploaded to gs://{bucket_name}/{blob_name}")
+
 # 
 def main():
     download_csv(PARQUET_URL)

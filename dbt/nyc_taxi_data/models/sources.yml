@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: nyc_yellow_taxi_data
+    tables:
+      - name: raw_taxi_trips
+        description: "Raw NYC taxi trips data loaded from GCS"

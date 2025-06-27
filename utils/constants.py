@@ -7,7 +7,8 @@ parser.read(os.path.join(os.path.dirname(__file__), '../config/config.conf'))
 PARQUET_URL = parser.get("project_variables", "PARQUET_URL")
 FILE_NAME = parser.get("project_variables", "FILE_NAME")
 
-GCP_PROJECT = parser.get("google_cloud_platform", "PARQUET_URL")
+GCP_PROJECT = parser.get("google_cloud_platform", "GCP_PROJECT")
+GCP_PROJECT_ID = ("google_cloud_platform", "taxi-data-pipeline-4653918")
 BUCKET_NAME = parser.get("google_cloud_platform", "BUCKET_NAME")
 BLOB_NAME = parser.get("google_cloud_platform", "BLOB_NAME")
 

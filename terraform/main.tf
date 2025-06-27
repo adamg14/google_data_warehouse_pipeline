@@ -51,8 +51,29 @@ resource "google_bigquery_table" "table" {
   table_id = var.table_id
 
   deletion_protection = false
-  
+
   labels = {
     env = "dev"
   }
+}
+
+resource "google_bigquery_job" "load_raw_data" {
+
+  job_id = "load_raw_data_${formatdate("YYYYMMDDhhmmss", timestamp())}"
+
+  load {
+    source_uris = [ "gs://"${var.bucket_name}/{var.blob_name} ]
+
+    destination_table {
+      project_id = var.project_id
+      dataset_id = var.dataset_id
+      table_id = var.table_id
+    }
+
+    skip_leading_rows = 1
+    source_format = "CSV"
+    autodetect = true
+  }
+
+
 }

@@ -1,0 +1,7 @@
+payment_type,payment
+1,Credit
+2,Cash
+3,No Charge
+4,Disputed
+5,Unknown
+6,Voided

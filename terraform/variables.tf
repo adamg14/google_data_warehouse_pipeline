@@ -21,3 +21,15 @@ variable "table_id" {
     type = string
     default = "taxi_trips"
 }
+
+variable "bucket_name"{
+    description = "Google Cloud Storage Bucket Name"
+    type = string
+    default = "nyc-taxi-data-8888"
+}
+
+variable "blob_name" {
+    description = "Google Cloud Storage BLOB Name"
+    type = string
+    default = "extracted_data.csv"
+}

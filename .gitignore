@@ -1,2 +1,3 @@
 config/config.conf
 gcp_credentials.json
+data/raw_data.csv

@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: nyc_trips
+    description: "Staging table"
+    columns:
+      - name: trip_id
+        description: "Unique identifier for each taxi_trip"
+        tests:
+          - unique
+          - not_null
+          

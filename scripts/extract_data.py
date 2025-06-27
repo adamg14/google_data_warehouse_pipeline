@@ -51,22 +51,9 @@ def download_csv(PARQUET_URL):
 
 
 # function for processing the data using pandas
-# function to upload the processed data to a google cloud bucket
-def gcp_load():
-    """This function takes the extracted data from the data source and uploads it to a google cloud bucket"""
-    storage_client = storage.Client.from_service_account_json('gcp_credentials.json')
-    bucket = storage_client.bucket(BUCKET_NAME)
-    blob = bucket.blob(BLOB_NAME)
 
-    generation_match_precondition = 0
-    blob.upload_from_filename(
-        source_file_name,
-        if_generation_match=generation_match_precondition
-    )
 
-    print(f"Extracted and processed data uploaded to gs://{bucket_name}/{blob_name}")
 
-# 
 def main():
     download_csv(PARQUET_URL)
 

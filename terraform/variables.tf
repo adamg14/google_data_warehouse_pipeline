@@ -19,5 +19,5 @@ variable "dataset_id" {
 variable "table_id" {
     description = "BigQuery Table ID"
     type = string
-    default = "trips"
+    default = "taxi_trips"
 }

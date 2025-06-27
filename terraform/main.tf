@@ -46,17 +46,12 @@ resource "google_bigquery_dataset" "dataset" {
 }
 
 # Google Cloud Platform BigQuery Table
-resource "google_bigquery_table" "name" {
-  dataset_id = google_bigquery_dataset.dataset
+resource "google_bigquery_table" "table" {
+  dataset_id = var.dataset_id
   table_id = var.table_id
 
-  time_partitioning {
-    type = "DAY"
-    field = "pickup_datetime"
-  }
-
-  schema = file("schema.json")
-
+  deletion_protection = false
+  
   labels = {
     env = "dev"
   }
